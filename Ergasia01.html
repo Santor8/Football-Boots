@@ -1,0 +1,94 @@
+<!doctype html>
+<html> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Football Shoes</title>
+        <link rel="stylesheet" href="Ergasia01.css">
+        <script src="Ergasia01.js"></script>
+        
+    </head>
+    <body>
+      <h1>Configure your special Football Shoes !!!</h1>
+      <!--Create the form of the product-->
+      <form id="MyForm">
+       <div class="flex wrapper"> 
+         <div class="StyleDiv">
+            <!--Radio Buttons-->
+           <p class="p1">Choose your favourite brand</p>
+           <label>
+              <input type="radio" id="Adidas" name="Brand" value="Adidas"  onclick="calculateTotal()" >
+              <label for="Adidas">Adidas</label> <label class="label1">50$</label><br>   
+           </label>
+         
+           <label>
+              <input type="radio" id="Nike" name="Brand" value="Nike"  onclick="calculateTotal()" >
+              <label for="Nike">Nike</label> <label class="label1">45$</label><br>  
+           </label>
+          
+           <label>
+              <input type="radio" id="Puma" name="Brand" value="Puma"  onclick="calculateTotal()" >
+              <label for="Puma">Puma</label> <label class="label1">35$</label><br>   
+           </label>
+              
+           <label>
+              <input type="radio" id="Under Armor" name="Brand" value="Under Armour"  onclick="calculateTotal()" >
+              <label for="Under Armour">Under Armour</label> <label class="label1">30$</label><br>   
+           </label> 
+         </div>  
+
+        
+         <div class="StyleDiv ">
+            <!--Checkbox-->
+           <p class="p1">Choose with laces or laceless(Choose ONLY one)</p> 
+           <ul>
+               <input type="checkbox" id="Laces" value="1" name="myCheckbox"  onclick="calculateTotal(); LacesImgAppears(id)" >
+               <label for="Laces">With Laces</label> <label class="label1">20$</label><br>
+               <li id="Lacesimg" style="display:none"><img src='Laces.jpg'>"</li>  
+           </ul>
+           <ul>
+               <input type="checkbox" id="Laceless" value="2" name="myCheckbox"  onclick="LacelessImgAppears(id); calculateTotal();">
+               <label for="Laceless">Laceless</label> <label class="label1">25$</label><br>
+               <li id="Lacelessimg" style="display:none"><img src='Laceless.jpg'>"</li>  
+           </ul> 
+         </div>
+
+         <div class="StyleDiv ">
+           <img id="image" src="Red.jpg"/>
+           <!--Dropdown List-->
+           <p class="p1">Choose your favourite colour</p>
+           <label for="Colours">Colours:</label>
+           <select name="Colours" id="Colours" onchange="ChangeImg('image',this.value)">
+             <option value="Red">Red</option>
+             <option value="Green">Green</option>
+             <option value="Blue">Blue</option>
+             <option value="Yellow">Yellow</option>
+             <option value="Purple">Purple</option>
+             <option value="Pink">Pink</option>
+             <option value="White">White</option>
+             <option value="Black">Black</option>
+           </select>
+         </div>
+
+         <div class="StyleDiv ">
+           <img id="image1" src="WhiteBoard.jpg"/>
+           <!--Dropdown List-->
+           <p class="p1">Choose the type of the football field </p>
+           <label for="Type">Type:</label>
+           <select name="Type" id="Type" onchange="ChangeImg('image1',this.value); calculateTotal()">
+             <option value="WhiteBoard">--Select Type--</option>
+             <option value="ArtificialGrass">Artificial Grass(AG) 10$</option>
+             <option value="FirmGround">Firm Ground(FG) 15$</option>
+             <option value="AstroTurf">Astro Turf(AT) 5$</option>
+             <option value="SoftGround">Soft Ground(SG) 20$</option>
+             <option value="Indoor">Indoor 10$</option>
+           </select>
+         </div>
+      </div>  
+         <!--Print Total Price-->
+         <p id="totalPrice" class=" p2 " >Total Price For the Football Shoe: $0</p>
+      </form>
+    
+      
+    </body>
+   
+</html>
